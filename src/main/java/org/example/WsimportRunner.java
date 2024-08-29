@@ -9,11 +9,11 @@ public class WsimportRunner {
         System.setProperty("javax.xml.accessExternalDTD", "all");
 
         // Caminho para o WSDL e o pacote para o código gerado
-        String wsdlPath = "C:\\Users\\Cauan\\IdeaProjects\\api_sponte\\WSAPIEdu.wsdl";
+        String wsdlPath = "/home/cauan/IdeaProjects/api_sponte/WSAPIEdu.wsdl"; // Caminho no Linux
         String packageName = "com.sponteeducacional";
 
-        // Caminho absoluto para o executável wsimport
-        String wsimportPath = "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin\\wsimport.bat";
+        // Caminho absoluto para o executável wsimport no Linux
+        String wsimportPath = "/usr/lib/jvm/java-17-openjdk-amd64/bin/wsimport"; // Ajuste conforme necessário
 
         // Comando wsimport com parâmetros
         String[] command = {

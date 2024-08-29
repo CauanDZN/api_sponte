@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://api.sponteeducacional.net.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://api.sponteeducacional.net.br/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:tns="http://api.sponteeducacional.net.br/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  targetNamespace="http://api.sponteeducacional.net.br/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://api.sponteeducacional.net.br/">
-      <s:import namespace="http://www.w3.org/2001/XMLSchema" schemaLocation="file:XMLSchema.xsd" />
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" schemaLocation="http://www.w3.org/2001/XMLSchema.xsd" />
       <s:element name="NovaRespostaMensagemApp">
         <s:complexType>
           <s:sequence>
@@ -102,8 +109,20 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertMovimentacaoResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -324,8 +343,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertFrequenciaDiarioResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -350,8 +384,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertConteudoDiarioResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -453,8 +502,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertDiarioAulasLivresResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -492,8 +556,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="UpdateDiarioAulasLivresResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -579,8 +658,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertHistoricoEscolarResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -719,8 +813,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertAlunosResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -765,8 +874,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertAlunos2Result">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -789,8 +913,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="ImportaAlunoResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -835,8 +974,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="UpdateAlunosResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -884,8 +1038,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="UpdateAlunos2Result">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -908,8 +1077,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="SetInadimplenteResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -1171,8 +1355,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertClienteResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -1223,8 +1422,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="UpdateClienteResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -1360,8 +1574,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertResponsaveisResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -1403,8 +1632,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="UpdateResponsaveisResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -1426,8 +1670,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="UpdateCompartilhaResponsavelResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -1704,8 +1963,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertTurmaResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -1740,8 +2014,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertTurmasAtivasResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -1774,8 +2063,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="UpdateTurmasResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -1884,8 +2188,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertMatriculaResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -1919,8 +2238,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="UpdateMatriculaResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -2615,8 +2949,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="InsertVendasResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -2928,8 +3277,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="GetLinhaDigitavelBoletosResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -2958,8 +3322,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="SetNotaParcialResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -2986,8 +3365,23 @@
             <s:element minOccurs="0" maxOccurs="1" name="SetNotaResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <!-- Elemento para XML Schema -->
+                  <s:element name="XmlSchemaElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+
+                  <!-- Elemento para XML Diffgram -->
+                  <s:element name="XmlDiffgramElements">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -4670,8 +5064,23 @@
       <s:element name="DataTable" nillable="true">
         <s:complexType>
           <s:sequence>
-            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            <!-- Elementos do XML Schema -->
+            <s:element name="XmlSchemaElements">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+
+            <!-- Elementos do XML Diffgram -->
+            <s:element name="XmlDiffgramElements">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
